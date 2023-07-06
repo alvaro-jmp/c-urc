@@ -1,0 +1,12 @@
+wait 1000 ms
+"r"
+wait 5 ms
+"r"
+wait 5 ms
+34
+wait 5 ms
+07
+wait 5 ms
+a7
+wait 5 ms
+A4 

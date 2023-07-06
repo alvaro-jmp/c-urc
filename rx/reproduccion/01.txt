@@ -1,0 +1,85 @@
+wait 1000 ms
+"r"
+wait 5 ms
+"r"
+wait 5 ms
+34
+wait 5 ms
+07
+wait 5 ms
+a7
+wait 5 ms
+A4
+
+wait 5 ms
+02
+wait 5 ms
+3c
+wait 5 ms
+06
+wait 5 ms
+90
+wait 5 ms
+07
+wait 5 ms
+91
+wait 5 ms
+06
+wait 5 ms
+da
+
+wait 25 ms
+10
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+10
+wait 5 ms
+02
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+02 
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+02
+wait 5 ms
+10
+wait 5 ms
+02 
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+10
+wait 5 ms
+30
+wait 5 ms
+02
+wait 5 ms
+02
+
+wait 25 ms
+00

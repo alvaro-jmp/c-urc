@@ -1,0 +1,131 @@
+﻿-- Código
+-- 10011100
+
+-- Uno lógico
+-- DT+ 2.413 ms
+-- DT- 2.875 ms
+
+-- Cero Lógico
+-- DT+ 621.118 us
+-- DT- 3.531 ms
+
+-- Tiempo reset
+-- 45 ms
+
+configuration for "pic16f690" is
+end configuration;
+
+testbench for "pic16f690" is
+begin
+    TRANSMITIENDO_CODIGO: process is
+		variable i : integer := 0;
+    begin
+        wait for 0 us;
+        report "Inicia reproducción del codigo puertas de estacionamiento Roel Suites con un retraso inicial de 10 ms";
+		RC3 <= '0';
+		wait for 10 ms;
+		
+		report "Terminó retraso inicial de 10 ms";
+		
+		loop
+		-- Bit 1 - 1
+				report "Inicia el bit 1 - 1";        
+				RC3 <= '1';
+				wait for 2.418 ms;
+				report "Termina DT+ a los 2.418 ms";
+				RC3 <= '0';
+				wait for 2.875 ms;
+				report "Termina DT- a los 2.875 ms";
+
+		-- Bit 2 - 0
+				
+				report "Inicia el bit 2 - 0";				
+				RC3 <= '1';
+				wait for 621.118 us;
+				report "Termina DT+ a los 621.118 us";
+				RC3 <= '0';
+				wait for 3.531 ms;
+				report "Termina DT- a los 3.531 ms";
+
+		-- Bit 3 - 0
+				
+				report "Inicia el bit 3 - 0";		
+				RC3 <= '1';
+				wait for 621.118 us;
+				report "Termina DT+ a los 621.118 us";
+				RC3 <= '0';
+				wait for 3.531 ms;
+				report "Termina DT- a los 3.531 ms";
+
+		-- Bit 4 - 1
+
+				report "Inicia el bit 4 - 1";		
+				RC3 <= '1';
+				wait for 2.418 ms;
+				report "Termina DT+ a los 2.418 ms";
+				RC3 <= '0';
+				wait for 2.875 ms;
+				report "Termina DT- a los 2.875 ms";
+
+		-- Bit 5 - 1
+				
+				report "Inicia el bit 5 - 1";		
+				RC3 <= '1';
+				wait for 2.418 ms;
+				report "Termina DT+ a los 2.418 ms";
+				RC3 <= '0';
+				wait for 2.875 ms;
+				report "Termina DT- a los 2.875 ms";
+
+		-- Bit 6 - 1
+
+				report "Inicia el bit 6 - 1";        
+				RC3 <= '1';
+				wait for 2.418 ms;
+				report "Termina DT+ a los 2.418 ms";
+				RC3 <= '0';
+				wait for 2.875 ms;
+				report "Termina DT- a los 2.875 ms";	
+
+		-- Bit 7 - 0
+				
+				report "Inicia el bit 7 - 0";		
+				RC3 <= '1';
+				wait for 621.118 us;
+				report "Termina DT+ a los 621.118 us";
+				RC3 <= '0';
+				wait for 3.531 ms;
+				report "Termina DT- a los 3.531 ms";
+
+		-- Bit 8 - 0
+
+				report "Inicia el bit 8 - 0";        
+				RC3 <= '1';
+				wait for 621.118 us;
+				report "Termina DT+ a los 621.118 us";
+				RC3 <= '0';
+				report "Ha terminado el codigo";	
+
+				report "Inicia el tiempo reset de 44 ms";
+				wait for 44 ms;
+				report "Finaliza el tiempo reset de 44 ms";
+			end loop;
+			
+		wait;
+    end process TRANSMITIENDO_CODIGO;	
+	
+	TRANSMITIENDO_PORTADORA: process is
+	begin
+		report "Inicia el test transmitiendo portadora a 500 ns";
+		loop
+
+			T1CKI <= '0';
+			wait for 500 ns;
+			T1CKI <= '1';
+			wait for 500 ns;
+			ADRESH <=0xFF; ADRESL<=0xFF;
+
+		end loop;
+	wait;
+	end process TRANSMITIENDO_PORTADORA;		
+end testbench;

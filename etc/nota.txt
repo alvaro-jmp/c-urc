@@ -1,0 +1,44 @@
+_________________________________________
+/////////////////////////////////////////
+////       Prueba y verificación     ////
+/////////////////////////////////////////
+----------------------------------------
+
+* Simular posTinc = 15;
+* Probar con desactivar C1ON en algunas operaciones, si persisten errores.
+* tRst fue calculado con PRE_TMR1=8;
+* 233 ms para detectar periodo.
+* No resetear Bluetooth.
+* tener cuidado en los bucle de no usar la variable de inicialización
+  para otras cosas.
+* tener cuidado en if, else programación inline.
+* tener cuidado con las condiciones en el if else que no se este utilizando en
+  otra parte.
+* Usar en bucle for -> AUX[0].
+* Mantener RCIE=0 durante muestreo.
+* Ejemplo de casting a puntero unsigned char: printUARTbyte(_CASTpUA 10); ---> printUARTbyte((unsigned char *)10); 
+  #define _CASTpUA (unsigned char*).
+* tRst no debe ser mayor a 232 ms.
+* Probar con varias claves.
+* No realizar operaciones en valores de registro que cambien constantement ejemplo TMR0, TMR1, etc.. solo igualarlos.
+
+_________________________________________
+/////////////////////////////////////////
+////  reg que no ncstn ser inclzd     ///
+/////////////////////////////////////////
+----------------------------------------
+
+numErr, AUX[0...2], AUX16[0...1], prdo, numErr
+
+_________________________________________
+/////////////////////////////////////////
+/////  #ERRORES DE COMPROBACIÓN    //////
+/////////////////////////////////////////
+----------------------------------------
+
+#01: Muestra no coincide segun tabla Código.
+#02: Números de flancos no iguales.
+#03: Portadora no iguales.
+#04: Se excedió en la tabla índice.
+#05: Se excedió en la tabla código.
+#06: Muestras muy bajas

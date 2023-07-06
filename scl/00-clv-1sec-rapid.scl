@@ -1,0 +1,202 @@
+﻿-- Versión normal
+configuration for "pic16f690" is
+end configuration;
+-- Clave 0000000011100
+-- 0 -> 1 320 us y 0 640 us
+-- 1 -> 1 640 us y 0 320 us
+
+testbench for "pic16f690" is
+begin
+    TRANSMITIENDO_CODIGO: process is
+		variable i : integer := 0;
+    begin
+        wait for 0 us;
+        report "Inicia reproducción del codigo sovica desconocido 02 y retraso inicial";
+		RC3 <= '0';
+		wait for 23411 us;
+		
+		report "Termina retraso inicial de 23411 us";
+		
+		loop
+
+				report "Inicia el bit 1 - 0";        
+				RC3 <= '1';
+								
+				wait for 320 us;
+				report "Termina DT positivo #01 a los 320 us";
+				RC3 <= '0';
+				
+				wait for 640 us;
+				report "Termina DT negativo #01 a los 640 us";
+
+		-- Bit 2 - 0
+				
+				report "Inicia el bit 2 - 0";				
+				RC3 <= '1';
+				
+				wait for 320 us;
+				report "Termina DT positivo #02 a los 320 us";
+				RC3 <= '0';
+				
+				wait for 640 us;
+				report "Termina DT negativo #02 a los 640 us";
+
+		-- Bit 3 - 1
+				
+				report "Inicia el bit 3 - 1";		
+				RC3 <= '1';
+				
+				wait for 640 us;
+				report "Termina DT positivo #03 a los 640 us";
+				RC3 <= '0';
+				
+				wait for 320 us;
+				report "Termina DT negativo #03 a los 320 us";
+
+		-- Bit 4 - 1
+
+				report "Inicia el bit 4 - 1";		
+				RC3 <= '1';
+				
+				wait for 640 us;
+				report "Termina DT positivo #04 a los 640 us";
+				RC3 <= '0';
+				
+				wait for 320 us;
+				report "Termina DT negativo #04 a los 320 us";
+
+		-- Bit 5 - 1
+				
+				report "Inicia el bit 5 - 1";		
+				RC3 <= '1';
+				
+				wait for 640 us;
+				report "Termina DT positivo #05 a los 640 us";
+				RC3 <= '0';
+				
+				wait for 320 us;
+				report "Termina DT negativo #05 a los 320 us";		
+
+		-- Bit 6 - 0
+
+				report "Inicia el bit 6 - 0";        
+				RC3 <= '1';
+				
+				wait for 320 us;
+				report "Termina DT positivo #06 a los 320 us";
+				RC3 <= '0';
+				
+				wait for 640 us;
+				report "Termina DT negativo #06 a los 640 us";		
+
+		-- Bit 7 - 0
+				
+				report "Inicia el bit 7 - 0";		
+				RC3 <= '1';
+				
+				wait for 320 us;
+				report "Termina DT positivo #07 a los 320 us";
+				RC3 <= '0';
+				
+				wait for 640 us;
+				report "Termina DT negativo #07 a los 640 us";
+
+		-- Bit 8 - 0
+
+				report "Inicia el bit 8 - 0";        
+				RC3 <= '1';
+				
+				wait for 320 us;
+				report "Termina DT positivo #08 a los 320 us";
+				RC3 <= '0';
+				
+				wait for 640 us;
+				report "Termina DT negativo #08 a los 640 us";
+				
+		-- Bit 9 - 0
+
+				report "Inicia el bit 9 - 0";        
+				RC3 <= '1';
+				
+				wait for 320 us;
+				report "Termina DT positivo #09 a los 320 us";
+				RC3 <= '0';
+				
+				wait for 640 us;
+				report "Termina DT negativo #09 a los 640 us";				
+				
+		-- Bit 10 - 0
+
+				report "Inicia el bit 10 - 0";        
+				RC3 <= '1';
+				
+				wait for 320 us;
+				report "Termina DT positivo #10 a los 320 us";
+				RC3 <= '0';
+				
+				wait for 640 us;
+				report "Termina DT negativo #10 a los 640 us";								
+				
+		-- Bit 11 - 0
+
+				report "Inicia el bit 11 - 0";        
+				RC3 <= '1';
+								
+				wait for 320 us;
+				report "Termina DT positivo #11 a los 320 us";
+				RC3 <= '0';
+								
+				wait for 640 us;
+				report "Termina DT negativo #11 a los 640 us";								
+				
+		-- Bit 12 - 0
+
+				report "Inicia el bit 12 - 0";        
+				RC3 <= '1';
+				wait for 320 us;
+								
+				report "Termina DT positivo #12 a los 320 us";
+				RC3 <= '0';
+								
+				wait for 640 us;
+				report "Termina DT negativo #12 a los 640 us";				
+				
+		-- Bit 13 - 0
+
+				report "Inicia el bit 13 - 0";        
+				RC3 <= '1';
+								
+				wait for 320 us;
+				report "Termina DT positivo #13 a los 320 us";
+				
+				report "Ha terminado le codigo";
+				RC3 <= '0';
+
+				report "Inicia el tiempo reset de 12 ms";
+				wait for 12 ms;
+				report "Finaliza el tiempo reset de 12 ms";
+				
+			end loop;
+		report "###################################";
+		report "Finalizo la transmisión del código";
+		report "###################################";
+			
+		wait;
+    end process TRANSMITIENDO_CODIGO;	
+	
+	TRANSMITIENDO_PORTADORA: process is
+	begin
+		report "Inicia el test transmitiendo portadora a 500 ns";
+		loop
+
+			T1CKI <= '1';
+			wait for 500 ns;			
+			T1CKI <= '0';
+			wait for 500 ns;
+			ADRESH <=0xFF; ADRESL<=0xFF;
+			RA4 <= '1';
+		end loop;
+	wait;
+	end process TRANSMITIENDO_PORTADORA;
+	
+end testbench;

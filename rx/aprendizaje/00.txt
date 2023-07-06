@@ -1,0 +1,32 @@
+wait 250 ms 
+"a"
+wait 40 ms
+"a"
+wait 3000 ms
+"a"
+wait 5 ms
+"a"
+wait 3000 ms
+"a"
+wait 5 ms
+"a"
+wait 3000 ms
+"a"
+wait 5 ms
+"a"
+wait 3000 ms
+"a"
+wait 5 ms
+"a"
+wait 3000 ms
+"a"
+wait 5 ms
+"a"
+wait 3000 ms
+"a"
+wait 5 ms
+"a"
+wait 3000 ms
+"a"
+wait 5 ms
+"a"

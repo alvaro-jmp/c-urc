@@ -1,0 +1,195 @@
+wait 1000 ms
+"r"
+wait 5 ms
+"r"
+wait 5 ms
+10
+wait 5 ms
+2C
+wait 5 ms
+3F
+wait 5 ms
+3B
+
+wait 5 ms
+EC
+wait 5 ms
+6A
+wait 5 ms
+E9
+wait 5 ms
+8
+wait 5 ms
+FA
+wait 5 ms
+EB
+wait 5 ms
+E3
+wait 5 ms
+F8
+
+wait 25 ms
+10
+wait 5 ms
+32
+wait 5 ms
+32
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+32
+wait 5 ms
+2
+wait 25 ms
+0
+
+wait 4000 ms
+"r"
+wait 5 ms
+"r"
+wait 5 ms
+10
+wait 5 ms
+2C
+wait 5 ms
+3F
+wait 5 ms
+3B
+
+wait 5 ms
+EC
+wait 5 ms
+6A
+wait 5 ms
+E9
+wait 5 ms
+8
+wait 5 ms
+FA
+wait 5 ms
+EB
+wait 5 ms
+E3
+wait 5 ms
+F8
+
+wait 25 ms
+10
+wait 5 ms
+32
+wait 5 ms
+32
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+32
+wait 5 ms
+2
+wait 25 ms
+0
+
+wait 4000 ms
+"r"
+wait 5 ms
+"r"
+wait 5 ms
+10
+wait 5 ms
+2C
+wait 5 ms
+3F
+wait 5 ms
+3B
+
+wait 5 ms
+EC
+wait 5 ms
+6A
+wait 5 ms
+E9
+wait 5 ms
+8
+wait 5 ms
+FA
+wait 5 ms
+EB
+wait 5 ms
+E3
+wait 5 ms
+F8
+
+wait 25 ms
+10
+wait 5 ms
+32
+wait 5 ms
+32
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+32
+wait 5 ms
+2
+wait 25 ms
+0
+
+wait 4000 ms
+"r"
+wait 5 ms
+"r"
+wait 5 ms
+10
+wait 5 ms
+2C
+wait 5 ms
+3F
+wait 5 ms
+3B
+
+wait 5 ms
+EC
+wait 5 ms
+6A
+wait 5 ms
+E9
+wait 5 ms
+8
+wait 5 ms
+FA
+wait 5 ms
+EB
+wait 5 ms
+E3
+wait 5 ms
+F8
+
+wait 25 ms
+10
+wait 5 ms
+32
+wait 5 ms
+32
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+32
+wait 5 ms
+2
+wait 25 ms
+0

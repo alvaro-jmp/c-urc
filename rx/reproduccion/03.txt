@@ -1,0 +1,86 @@
+wait 1000 ms
+72
+wait 5 ms
+72
+wait 5 ms
+72
+wait 5 ms
+0f
+wait 5 ms
+29
+wait 5 ms
+34
+wait 5 ms
+f8
+wait 5 ms
+59
+wait 5 ms
+c2
+wait 5 ms
+9a
+wait 5 ms
+fd
+wait 5 ms
+c3
+wait 5 ms
+f9
+wait 5 ms
+70
+wait 5 ms
+f8
+wait 5 ms
+6f
+wait 5 ms
+f9
+wait 5 ms
+10
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+10
+wait 5 ms
+02
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+02
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+02
+wait 5 ms
+10
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+10
+wait 5 ms
+10
+wait 5 ms
+02
+wait 5 ms
+02
+wait 5 ms
+10
+wait 5 ms
+30
+wait 5 ms
+02
+wait 5 ms
+02

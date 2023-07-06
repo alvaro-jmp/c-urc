@@ -1,0 +1,64 @@
+//00
+if (cntVerf==0 && cntFl[0]==4) {band.tmp240msTMR2=1; tmp20msTMR2(1);}
+if (cntVerf==0 && cntFl[0]>5) {cntFl[0]=5; if (tRst[0]<mtras) tRst[0]=mtras;}
+
+//01
+if (cntVerf<2) {
+	if (C1OUT) {++cntVerf;}
+	else if (!C1OUT && cntVerf==1) {band.dtcTmpRst=1; ++cntVerf;}
+	else cntFl[0]=0;
+}
+
+//02
+if (band.dtcTmpRst && !C1OUT && (TMR1>12000) && !band.rstDtdo) {
+	band.rstDtdo=1; cntFl[0]=posTcod[1]=0; band.nbbl=0; ++cntVerf;			
+}	
+
+//03
+//Borrar				
+C1ON=0; TMR1ON=0; TMR2ON=0; TMR2IE=0; C1IE=0;
+//cntFl[0]
+printUARTbyte(&cntFl[0]);
+//tIndc
+for(AUX[0]=0; AUX[0]<=posTindc; AUX[0]++) { //probablemente el ultimo indc sea cero o un valor
+	asm("clrwdt"); 
+	if (tIndc[AUX[0]]==0) break;
+	else {
+		AUX[2]=(tIndc[AUX[0]])>>8; AUX[1]=tIndc[AUX[0]]&0xFF;
+		printUARTbyte(&AUX[2]); tmp20msTMR2(0);
+		printUARTbyte(&AUX[1]); tmp20msTMR2(0);
+	}				
+}	
+sec1();
+//tCod
+AUX[1]=(cntFl[0]>>1)-1;
+for(AUX[0]=0; AUX[0]<=AUX[1]; AUX[0]++) {
+	asm("clrwdt"); printUARTbyte(&tCod[AUX[0]]); tmp20msTMR2( 0);
+}	
+//Secuencia Final
+for(AUX[0]=0; AUX[0]<=5; AUX[0]++) {
+	asm("clrwdt"); printUARTbyte(&AUX[0]); tmp20msTMR2( 0);
+}				
+resetRg(); WDTCON=0x12;
+//Borrar				
+
+switch(cntVerf) {
+	case 1: {
+	switch(rxCont) {
+		case 1: cntFl[1]=DATARX; break;
+		case 2: tRst[0]=(DATARX<<8); break; //tRstH
+		case 3: tRst[0]|=DATARX; break; //tRstL
+		case 4: cntFl[0]=DATARX; TMR2ON=TMR2IE=0; rxCont=0; ++cntVerf; // rxCont=0 para que en el case2 del switch anterior rxCont sea igual a 1
+			band.rcvDataParaRpCtrl=0; band.rpCtrl=1;
+	}
+	break;
+	}	
+	//					case 2: {
+	//						if (rxCont==1) {tIndc[posTindc]=DATARX<<8;}
+	//						else {tIndc[posTindc++]|=DATARX; rxCont=0;}
+	//						break;
+	//					}						
+	//					case 3: tCod[posTcod[0]++]=DATARX; break;
+	//					case 4: band.rpCtrl=1; 
+	//						band.rcvDataParaRpCtrl=0; TMR2ON=TMR2IE=0; rxCont=0;
+	}
