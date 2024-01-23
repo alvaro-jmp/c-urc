@@ -1,4 +1,4 @@
-# c-cru-garage-door-not-encrypted 
+# c-urc-garage-door-not-encrypted 
 
 This is a program for a PIC16F690 microcontroller from a [project](https://drive.google.com/file/d/1IFt62EF3NbSOA1Vvz_oraNpHULJRAejd/view?usp=sharing) I did between 2012 - 2014 on a wireless universal remote control that learns the digital signal encoding of remote controls used for garages or parking gates that do not have any encryption. It also has the function of reproducing the digital signal encoding.
 
